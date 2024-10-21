@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/styles/app.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <div class="contenedorPrincipalMenu">
+        <div class="cardCompleta">
+            <div class="cardMenuLateral">
+                <div class="tituloCard">
+                    <span class="material-symbols-outlined iconTituloCard">
+                        factory
+                    </span>
+                    <span>Persona Jurídica</span>
+                    <span id="iconTooltipCard" class="material-symbols-outlined iconTituloCard">
+                        info
+                    </span>
+                    <div class="tooltipCardMenu">
+                        <span>Tooltip para el formulario</span>
+                    </div>
+                </div>
+                <span class="informacionCard">
+                    Por favor ingrese a cada una de las secciones del menú listadas a continuación, y complete la información.
+                </span>
+                <div class="MenuCard">
+                    <ul>
+                        <li class="opcionMenuCard" >
+                            <a href="#" class="linkOpcionMenuCard selected" data-component="personaJuridica" onclick="loadContentInt('personaJuridica')">
+                                <span class="material-symbols-outlined iconOpcionMenuCard">Home</span>
+                                <span class="labelOpcionMenuCard">Principal</span>
+                            </a>
+                        </li>
+                        <li class="opcionMenuCard" >
+                            <a href="#" class="linkOpcionMenuCard" data-component="direccionmapa" onclick="loadContentInt('direccionmapa')">
+                                <span class="material-symbols-outlined iconOpcionMenuCard">add_location_alt</span>
+                                <span class="labelOpcionMenuCard">Dirección</span>
+                            </a>
+                        </li>
+                        <li class="opcionMenuCard" >
+                            <a href="#" class="linkOpcionMenuCard" data-component="contactos" onclick="loadContentInt('contactos')">
+                                <span class="material-symbols-outlined iconOpcionMenuCard" >contacts</span>
+                                <span class="labelOpcionMenuCard">Contactos</span>
+                            </a>
+                        </li>
+                        <li class="opcionMenuCard" >
+                            <a href="#" class="linkOpcionMenuCard" data-component="archivosadjuntos" onclick="loadContentInt('archivosadjuntos')">
+                                <span class="material-symbols-outlined iconOpcionMenuCard">archive</span>
+                                <span class="labelOpcionMenuCard">Archivos</span>
+                            </a>
+                        </li>
+                        <li class="opcionMenuCard">
+                            <a href="#" class="linkOpcionMenuCard"  data-component="notasadjuntas" onclick="loadContentInt('notasadjuntas')">
+                                <span class="material-symbols-outlined iconOpcionMenuCard">description</span>
+                                <span class="labelOpcionMenuCard">Notas</span>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="cardContenedorFormulario">
+                <div id="formInterno" class="formularioDinamico">
+
+                </div>
+                <div class="botonesFormularioDinamico">
+                    <button>Guardar</button>
+                    <button>Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- 
+    <script src="/assets/scripts/menuPaginas.js"></script>
+    <script src="/assets/components/persona-juridica.js"></script> -->
+    
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persona Juridica</title>
+
+    <!-- Incluir el CSS de Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+    <link rel="stylesheet" href="/assets/styles/app.css">
+
+
+</head>
+<body>
+    
+        <div class="cardFormulario scrollable-form">
+            <h3>Direcciones</h3>
+            <!-- Formulario -->
+            <div class="form-group">
+                <div class="input-group half-width">
+                    <select name="" id="">
+                        <option value="0">Seleccione el País</option>
+                        <option value="1">Colombia</option>
+                    </select>
+                </div>
+                <div class="input-group half-width">
+                    <select name="" id="">
+                        <option value="0">Seleccione el Departamento</option>
+                        <option value="1">Cundinamarca</option>
+                    </select>
+                </div>
+                <div class="input-group half-width">
+                    <select name="" id="">
+                        <option value="0">Seleccione la Ciudad</option>
+                        <option value="1">Bogotá</option>
+                    </select>
+                </div>
+                <div class="input-group half-width">
+                    <input type="text" placeholder="Barrio">
+                    <label for="">Barrio</label>
+                </div>
+                                 
+                <div class="input-group half-width">
+                    <input type="text" placeholder="Dirección">
+                    <label for="">Dirección</label>
+                </div>
+                <div class="input-group half-width">
+                    <input type="text" placeholder="Información Adicional">
+                    <label for="">Información Adicional</label>
+                </div>
+                <div class="input-group half-width">
+                    <input type="text" placeholder="Código Postal">
+                    <label for="">Código Postal</label>
+                </div>
+                <div class="input-group full-width">
+                    
+                    <label for="">Ubicación Mapa</label>
+                    <div id="map"></div>
+
+                    <!-- Campos ocultos para almacenar la latitud y longitud seleccionadas -->
+                    <input type="hidden" id="latitud" name="latitud">
+                    <input type="hidden" id="longitud" name="longitud">
+                </div> 
+            </div>
+            
+        </div>
+    
+    
+    <!-- Incluir las librerías de Leaflet al final del body -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <script>
+        var map = L.map('map').setView([4.60971, -74.08175], 13); // Bogotá
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        var marker = L.marker([4.60971, -74.08175], { draggable: true }).addTo(map);
+
+        // Escuchar cuando el usuario hace clic en el mapa
+        map.on('click', function(e) {
+        // Mover el marcador a la nueva posición
+        marker.setLatLng(e.latlng);
+
+        // Capturar latitud y longitud
+        var latitud = e.latlng.lat;
+        var longitud = e.latlng.lng;
+
+        // Mostrar las coordenadas (puedes almacenarlas en campos ocultos o enviarlas a tu backend)
+        console.log("Latitud: " + latitud + ", Longitud: " + longitud);
+
+        // Opcional: Asignar valores a campos ocultos del formulario
+        document.getElementById('latitud').value = latitud;
+        document.getElementById('longitud').value = longitud;
+        }); 
+
+
+        // Función para enviar la latitud y longitud al servidor
+        function guardarDireccion() {
+          var latitud = document.getElementById('latitud').value;
+          var longitud = document.getElementById('longitud').value;
+      
+          // Enviar los datos usando fetch (o AJAX)
+          fetch('/guardar_direccion', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ latitud: latitud, longitud: longitud })
+          })
+          .then(response => response.json())
+          .then(data => console.log("Datos guardados con éxito: ", data))
+          .catch(error => console.error("Error al guardar la dirección: ", error));
+        }
+    </script>
+      
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+/* ********* Sidebar ********* */
+        /* ************************** */
+        .sidebar {
+            padding-top: 50px;
+            background-color: var(--gris-principal);
+            width: 70px;
+            color: white;
+            position: relative;
+            overflow-y: auto;
+            flex-shrink: 0; /* Asegura que el sidebar no se reduzca */
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            width: 100%; /* Ocupa todo el espacio restante al lado del sidebar */
+            background-color: aqua;
+        }
+
+        .sidebar.expanded {
+            width: 270px;
+        }
+
+        .menuSidebar {
+            list-style: none;
+            padding: 0;
+            
+        }
+
+        .menuOption {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            height: auto;
+            text-decoration: none;
+            background-color: var(--gris-principal);
+            border-bottom: 1px solid var(--gris-secundario);
+        }
+
+        .linkMenuOption, .linkSubMenuOption {
+            width: 100%;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            color: white;
+            height: 50px;
+            box-sizing: border-box;
+            cursor: pointer !important;
+        }
+
+        .iconMenu {
+            padding: 10px 20px;
+            font-size: 30px !important;
+        }
+
+        .linkSubMenuOption .iconMenu{
+            font-size: 20px !important;
+            padding: 10px 25px;
+            cursor: pointer;
+        }
+
+        .labelMenuOption {
+            font-size: small;
+            flex-grow: 1;
+            
+        }
+
+        .iconExpandSubmenu {
+            font-size: 24px;
+            transition: transform 0.3s ease;
+        }
+
+        .subMenuSidebar {
+            display: none;
+            list-style: none;
+            padding: 0;
+            background-color: var(--gris-secundario);
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            pointer-events: auto;
+        }
+
+        .subMenuSidebar .menuOption {
+            height: 40px;
+            background-color: var(--gris-secundario);
+            
+        }
+
+        .subMenuSidebar .menuOption:hover {
+            background-color: var(--boton-principal);
+        }
+
+        .menuOption.active > .subMenuSidebar {
+            display: block;
+        }
+
+        .menuOption.active > .iconExpandSubmenu {
+            transform: rotate(180deg); /* Rotar el ícono cuando el submenú está abierto */
+        }
+
+        .menuOption.active .subMenuSidebar {
+            display: block; /* Asegura que el submenú se despliegue correctamente */
+        }
+
+        .menuOption:hover {
+            background-color: var(--boton-principal);
+        }
+
+        .logoutSidebar{
+            margin-top: auto;
+            padding-bottom: 10px;
+            border: none;
+        }

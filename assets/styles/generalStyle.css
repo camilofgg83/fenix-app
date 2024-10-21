@@ -1,0 +1,339 @@
+/* Estilos de elementos generales */
+
+:root {
+    --background-color: 206, 229, 242;
+    --texto-cuerpo-pagina: #637081;
+    --texto-secundario-gris: #d6d6d6;
+    --gris-principal: rgb(2, 48, 71);
+    --gris-secundario: #536b78;
+    --boton-principal: #219ebc;
+    --boton-principal-hover: #ffb703;
+    --rojo-notificacion: #ff0303;
+    --verde-notificacion: #8df10b;
+    --gris-inputs: #f6f6f6;
+    --azul-claro: #dbe7f9;
+    --opacidad-50: 0.5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    color: var(--texto-cuerpo-pagina);
+}
+
+p{
+    font-size: small;
+}
+
+a{
+    color: var(--texto-cuerpo-pagina);
+}
+
+a:hover{
+    color: var(--gris-principal)
+}
+
+/* ******* Estilos de CardPrincipal ******** */
+/* ***************************************** */
+    .contenedorPrincipal {
+        /* width: 100%; */
+        max-width: 100%;
+        /* height: 500px; */
+        max-height: 500px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    .cardFormulario {
+        background-color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 20px;
+        /* box-shadow: 0 2px 4px rgba(0,0,0,0.1); */
+        width: 100%;
+        height: 100%;
+        max-height: 430px;
+        max-width: 600px;
+        overflow-y: auto;
+        box-sizing: border-box;
+    }
+
+    .cardFormulario h3 {
+        margin-bottom: 20px;
+        color: var(--boton-principal);
+    }
+
+/* ******* Fin Estilos de CardPrincipal ******** */
+
+
+    /* Estilo base para los select */
+    select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        color: var(--texto-cuerpo-pagina);
+        background-color: var(--gris-inputs);
+        border: none;
+        border-radius: 4px;
+        padding: 12px;
+        padding-right: 40px; /* Espacio para el ícono */
+        font-size: 12px;
+        width: 100%;
+        outline: none;
+        position: relative;
+        transition: 0.2s ease all;
+    }
+
+    /* Icono para select, puedes ajustar la imagen del icono de dropdown */
+    select {
+        background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20height%3D%2224px%22%20viewBox%3D%220%20-960%20960%20960%22%20width%3D%2224px%22%20fill%3D%22%235f6368%22%3E%3Cpath%20d%3D%22m480-360%20160-160H320l160%20160Zm0%20280q-83%200-156-31.5T197-197q-54-54-85.5-127T80-480q0-83%2031.5-156T197-763q54-54%20127-85.5T480-880q83%200%20156%2031.5T763-763q54%2054%2085.5%20127T880-480q0%2083-31.5%20156T763-197q-54%2054-127%2085.5T480-80Zm0-80q134%200%20227-93t93-227q0-134-93-227t-227-93q-134%200-227%2093t-93%20227q0%20134%2093%20227t227%2093Zm0-320Z%22/%3E%3C/svg%3E');
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        background-size: 20px;
+    }
+
+    /* Estilos para los labels de los select */
+    select:focus + label,
+    select:not([value=""]) + label {
+        top: 8px;
+        left: 20px;
+        font-size: 12px;
+        color: var(--boton-principal);
+        display: none; /* Mostrar la etiqueta cuando el campo está enfocado o tiene valor */
+    }
+
+    /* Mostrar el label solo si el select tiene un valor diferente a la opción vacía */
+    select:focus + label,
+    select:not(:placeholder-shown) + label {
+        top: 8px;
+        left: 20px;
+        font-size: 12px;
+        color: var(--boton-principal);
+        display: block; /* Mostrar la etiqueta cuando el campo está enfocado o tiene una opción seleccionada */
+    }
+
+    select:focus,
+    select:not(:placeholder-shown) {
+        padding-top: 20px;
+        padding-bottom: 4px;
+    }
+
+    select:focus::placeholder {
+        opacity: 0;
+    }    
+
+    /* Añadido: Estilo para el contenedor del formulario con scroll */
+    .scrollable-form {
+        max-height: 100vh; /* Puedes ajustar esta altura según tu diseño */
+        overflow-y: auto;
+    }
+
+/* ******* Fin Estilos de CardPrincipal ******** */
+
+/* * ******* Estilos de Formulario ******** */
+        /* ***************************************** */
+
+
+
+        .form-group {
+            display: flex;
+            flex-wrap: wrap;
+            margin: -8px; /* Compensar el padding de los input-group */
+            box-sizing: border-box;
+        }
+
+        .input-group {
+            padding: 4px;
+            position: relative;
+            display: flex; /* Usar flexbox para alinear los elementos */
+            align-items: center; /* Alinear verticalmente */
+            box-sizing: border-box;
+        }
+
+        .full-width {
+            width: 100%;
+        }
+
+        .half-width {
+            width: 50%;
+        }
+
+        input,
+        textarea, 
+        select {
+            width: 100%;
+            padding: 12px;
+            padding-right: 40px; /* Espacio para el ícono */
+            background-color: var(--gris-inputs);
+            border: none;
+            border-radius: 4px;
+            font-size: 12px;
+            color: var(--texto-cuerpo-pagina);
+            outline: none;
+        }
+
+        label {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 16px;
+            color: #aaa;
+            transition: 0.2s ease all;
+            pointer-events: none;
+            display: none; /* Ocultar inicialmente */
+        }
+
+        input:focus + label,
+        textarea:focus + label,
+        input:not(:placeholder-shown) + label {
+            top: 8px;
+            left: 20px;
+            font-size: 12px;
+            color: var(--boton-principal);
+            display: block; /* Mostrar la etiqueta cuando el campo está enfocado o no está vacío */
+        }
+
+        /* Transición y efecto al enfocar */
+        input:focus + label,
+        textarea:focus + label,
+        select:focus + label,
+        input:not(:placeholder-shown) + label,
+        textarea:not(:placeholder-shown) + label,
+        select:not([value=""]) + label {
+            top: 8px;
+            left: 20px;
+            font-size: 12px;
+            color: var(--boton-principal);
+            display: block; /* Mostrar la etiqueta cuando está enfocado o no está vacío */
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus,
+        input:not(:placeholder-shown),
+        textarea:not(:placeholder-shown),
+        select:not([value=""]) {
+            padding-top: 20px;
+            padding-bottom: 4px;
+        }
+
+        input:focus::placeholder,
+        textarea:focus::placeholder {
+            opacity: 0;
+        }
+
+        .buttonsForm {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .buttonsForm button {
+            margin-bottom: 16px;
+        }
+
+        button {
+            width: 200px;
+            padding: 10px 0px;
+            border: none;
+            border-radius: 4px;
+            background-color: var(--boton-principal);
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover, button:focus {
+            background-color: var(--boton-principal-hover);
+        }
+
+        /* Estilo para el botón deshabilitado */
+        button:disabled {
+            background-color: var(--gris-inputs);
+            border: 1px solid var(--boton-principal);
+            color: var(--texto-cuerpo-pagina);
+            cursor: not-allowed;
+        }
+
+        /* Botón con ïcono */
+        .infoButtonAndIcon{
+            display: flex;
+            flex-direction: row;
+            width: 120px;
+            padding: 8px;
+            background-color: white;
+            color: var(--boton-principal);
+            border: 1px solid var(--boton-principal);
+            max-width: 140px;
+            height: 40px;
+            font-size: 12px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .infoButtonAndIcon span{
+            font-size: 20px;
+        }
+
+        .error {
+            margin-top: 8px;
+            width: 100%;
+            color: red;
+            font-size: x-small;
+        }
+
+        .invalid {
+            border: 1px solid red;
+        }
+
+        input[required] {
+            padding-right: 40px; /* Ajustar para dar espacio al ícono */
+        }
+
+        /* Estilo para el ícono en el input  */
+        input[required] {
+            padding-right: 30px; /* Para dar espacio al icono */
+
+            background-image: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20height%3D%2220px%22%20viewBox%3D%220%20-960%20960%20960%22%20width%3D%2220px%22%20fill%3D%22%23B7B7B7%22%3E%3Cpath%20d%3D%22m332-264%20148-113%20148%20113-56-182%20148-106H538l-58-192-58%20192H240l148%20106-56%20182ZM480-96q-79%200-149-30t-122.5-82.5Q156-261%20126-331T96-480q0-80%2030-149.5t82.5-122Q261-804%20331-834t149-30q80%200%20149.5%2030t122%2082.5Q804-699%20834-629.5T864-480q0%2079-30%20149t-82.5%20122.5Q699-156%20629.5-126T480-96Zm0-72q130%200%20221-91t91-221q0-130-91-221t-221-91q-130%200-221%2091t-91%20221q0%20130%2091%20221t221%2091Zm0-312Z%22/%3E%3C/svg%3E');
+            background-repeat: no-repeat;
+            background-position: right 10px center; /* Ajusta la posición del icono */
+            background-size: 20px; /* Ajusta el tamaño del icono */
+        }
+
+        input[type="search"] {
+            padding: 8px;
+            background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20height%3D%2220px%22%20viewBox%3D%220%20-960%20960%20960%22%20width%3D%2220px%22%20fill%3D%22%23CCCCCC%22%3E%3Cpath%20d%3D%22M765-144%20526-383q-30%2022-65.79%2034.5-35.79%2012.5-76.18%2012.5Q284-336%20214-406t-70-170q0-100%2070-170t170-70q100%200%20170%2070t70%20170.03q0%2040.39-12.5%2076.18Q599-464%20577-434l239%20239-51%2051ZM384-408q70%200%20119-49t49-119q0-70-49-119t-119-49q-70%200-119%2049t-49%20119q0%2070%2049%20119t119%2049Z%22/%3E%3C/svg%3E');
+            background-repeat: no-repeat;
+            background-position: right 10px center; /* Ajusta la posición del icono */
+            background-size: 20px; /* Ajusta el tamaño del icono */
+        }
+
+        /* Quitar icono de cerrar */
+        input[type="search"]::-webkit-search-cancel-button {
+            appearance: none;
+        }
+
+@media (max-width: 600px) {
+    .half-width {
+        width: 100%;
+    }
+}
+
+#map {
+    height: 200px;  /* Un tamaño adecuado para visualizar el mapa */
+    width: 100%;    /* Asegúrate de que ocupe todo el ancho disponible */
+    display: block; /* Asegura que sea un bloque para evitar que se colapse */
+    position: relative;
+}
+

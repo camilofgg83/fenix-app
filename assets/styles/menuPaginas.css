@@ -1,0 +1,68 @@
+.contenedorMenusPaginaInterno {
+    display: flex;
+    justify-content: center;
+    width: 150px;
+    max-width: 150px;
+    background-color: inherit;
+}
+
+.menuInternoPagina {
+    width: 100%;
+    background-color: inherit;
+    padding: 10px;
+}
+
+.opcionMenuPaginaInterno {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Cambio del fondo del li en hover */
+.opcionMenuPaginaInterno:hover {
+    background-color: var(--gris-inputs);
+}
+
+/* Aplica el cambio de color a los textos e íconos dentro del li en hover */
+.opcionMenuPaginaInterno:hover .linkOpcionMenuPaginaInterno {
+    color: var(--boton-principal) !important;
+}
+
+.opcionMenuPaginaInterno:hover .labelOpcionMenuInterno, 
+.opcionMenuPaginaInterno:hover .iconOpcionMenuInterno {
+    color: var(--boton-principal) !important; /* Define el color que quieras para el hover */
+}
+
+.linkOpcionMenuPaginaInterno {
+    display: flex;
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    justify-content: space-between; /* Alinea elementos entre los extremos */
+    text-decoration: none;
+    color: var(--texto-cuerpo-pagina);
+}
+
+.labelOpcionMenuInterno {
+    font-size: small;
+}
+
+/* Color inicial de los íconos */
+.iconOpcionMenuInterno {
+    font-size: 16px !important;
+    color: var(--texto-cuerpo-pagina);
+}
+
+/* Estilo para la opción seleccionada */
+.opcionMenuPaginaInterno.selected {
+    background-color: var(--gris-inputs); /* Cambia el color de fondo cuando está seleccionado */
+    
+}
+
+.opcionMenuPaginaInterno.selected .labelOpcionMenuInterno,
+.opcionMenuPaginaInterno.selected .iconOpcionMenuInterno {
+    color: var(--boton-principal) !important; /* Cambia el color del texto y el icono cuando está seleccionado */
+}

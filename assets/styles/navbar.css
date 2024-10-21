@@ -1,0 +1,278 @@
+/* ********* Navbar y todos sus elementos  ********* */
+        /* ************************** */
+
+        .navbar{
+            display: flex;
+            /* width: calc(100% - 70px); */
+            width: 100%;
+            height: 50px;
+            align-items: center;
+            background-color: var(--boton-principal);
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .content {
+            flex-grow: 1; /* Para que el contenido crezca ocupando el espacio vertical disponible */
+            background: linear-gradient(to bottom, rgb(var(--background-color)), white);
+            padding: 20px;
+            overflow-y: auto; /* Habilita el scroll si el contenido es extenso */
+        }
+
+        .navbar button{
+            position: relative; /*Necesario para ubicacicon de tolltips */
+            border: 0;
+            color: white;
+            background: none;
+            padding: 0 5px;
+            cursor: pointer;
+            width: auto;
+        }
+
+        .navbar button:hover{
+            color: var(--boton-principal-hover);
+        }
+
+        .navbar-option {
+            margin-left: auto;
+            position: relative; /*Necesario para posicionar el Taskdropdown */
+        }
+
+        /*  -------- Tooltips Navbar --------- */
+        /* Tooltip general, solo aplicado a botones con data-tooltip */
+        .toggle-btn[data-tooltip]:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 5px;
+            border-radius: 3px;
+            white-space: nowrap;
+            transform: translateX(-50%);
+            top: 100%;
+            left: 50%;
+            margin-bottom: 10px;
+            opacity: 1;
+            pointer-events: none;
+            font-size: 10px;
+        }
+
+        /* Ocultar el tooltip por defecto */
+        .toggle-btn[data-tooltip]::after {
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        /* Mostrar el tooltip cuando se hace hover */
+        .toggle-btn[data-tooltip]:hover::after {
+            opacity: 1;
+        }
+
+        /* ***** Badget ***** */
+        .badget{
+            
+            position: absolute;
+            background-color: var(--rojo-notificacion);
+            border-radius: 50%;
+            width: 15px;
+            height: 15px;
+            border: none;
+            font-size: x-small;
+            text-align: center;
+            line-height: 15px;
+            top: 0; /* Posiciona el borde superior del badge en el centro del contenedor */
+            transform: translate(-50%, -50%); /* Ajusta el badge para que esté completamente centrado */
+        }
+
+        .badget:hover{
+            color: white;
+        }
+
+        /*Menú Usuario Navbar */
+        .usuarioMenu {
+            display: flex;
+            align-items: center;
+            width: 150px;
+            color: white;
+            font-size: x-small;
+            cursor: pointer;
+            position: relative; /*Necesario para el dropdown*/
+        }
+        
+        .userName {
+            margin-left: auto;
+            align-items: rigth;
+        }
+
+        #arrowUser {
+            margin-left: auto;
+            font-size: small;
+            margin: 0;
+            padding: 0;
+        }
+
+        .userInfoMenu {
+            display: flex;
+            flex-direction: column;
+            margin-left: auto;
+        }
+
+        .photoUser{
+            margin-right: 10px;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: aqua;
+            /* margin-left: auto; */
+        }
+
+        .photoUser img{
+            width:100%;
+            height: 100%;
+            object-fit: cover;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* ----------- Dropdwon Menú --------- */
+        /* Estilo del menú desplegable */    
+
+        .Dropdown-menu {
+            display: none; /* Oculta el menú por defecto */
+            position: absolute; /* Posiciona el menú en relación al contenedor más cercano con position: relative */
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            top: 100%; /* Posiciona el menú justo debajo del botón */
+            min-width: 200px; /* Ajusta el ancho mínimo según sea necesario */
+            border-radius: 4px;
+            
+            z-index: 1000;
+        }
+
+        /* Menú de Tareas */
+        #taskDropdownMenu {
+            padding: 0px;
+            left: -80px; /* Alinea el menú con el borde izquierdo del botón */
+            right: auto; /* Evita que el menú se alinee con el borde derecho del botón */
+        }
+
+        /* Menú de Notificaciones */
+        #notificationsDropdownMenu {
+            padding: 0px;
+            left: 0; /* Alinea el menú con el borde izquierdo del botón */
+            right: auto; /* Evita que el menú se alinee con el borde derecho del botón */
+        }
+
+        #userDropdownMenu{
+            right: 10px;
+            
+        }
+
+        .listDropdown {
+            color: var(--texto-cuerpo-pagina);
+            list-style: none;
+            /* border-bottom: 1px solid var(--texto-cuerpo-pagina); */
+        }
+
+        .listDropdown h1{
+            
+            height: 35px;
+            background-color: var(--boton-principal-hover);
+            color: white;
+            text-align: center;
+            font-size: medium;
+            line-height: 35px;
+            
+        }
+
+        .dropNotUser{
+            margin-left: auto;
+        }
+
+        .optionListDropdown{
+            display: block;
+            display: flex;
+            align-items: center;
+            
+            padding: 10px 10px;
+            color: inherit;
+            text-decoration: none;
+            font-size: small;
+
+            border-bottom: 1px solid var(--texto-secundario-gris);
+        }
+
+        .Dropdown-menu .optionListDropdown:hover, .optionListDropdownUser:hover{
+            background-color: rgba(var(--background-color), 0.3);
+        }
+
+        /* Mostrar el menú cuando se haga clic */
+        .show {
+            display: block;
+        }
+
+        .dropdown-icon{
+            font-size: 17px;
+        }
+
+        .divLabelOptionDroprown {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .labelOptionListDropdown{
+            margin-left: 5px;
+        }
+
+        .labelOptionListDropdownDate{
+            margin-left: 5px;
+            margin-top: 5px;
+            font-size: 8px;
+            color: var(--texto-secundario-gris);
+        }
+
+        .optionListDropdownAll{
+            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--texto-secundario-gris);
+            text-decoration: none;
+            padding: 10px 10px;
+            font-size: 10px;
+            
+        }
+
+        .optionListDropdownAll:hover{
+            color: var(--texto-cuerpo-pagina);
+        }
+
+        .optionListDropdownUser{
+            display: block;
+            display: flex;
+            align-items: center;
+            
+            padding: 10px 10px;
+            color: inherit;
+            text-decoration: none;
+            font-size: small;
+        }
+       
+        #logOut{
+            border-top: 1px solid var(--texto-secundario-gris);
+            padding: 20px 10px;
+        }
+
+        .footer{
+            width: 100%;
+            background-color: white;
+            margin-top: auto;
+            padding: 10px 10px;
+            font-size: small;
+        }
+
+        

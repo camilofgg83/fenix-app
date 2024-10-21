@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/styles/app.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <div class="contenedorMenusPaginaInterno">
+        <ul class="menuInternoPagina">
+            <li class="opcionMenuPaginaInterno" data-component="personaJuridica" onclick="loadContentInt('personaJuridica')">
+                <a href="#" class="linkOpcionMenuPaginaInterno">
+                    <span class="labelOpcionMenuInterno">Principal</span>
+                    <span class="material-symbols-outlined iconOpcionMenuInterno">Home</span>
+                </a>
+            </li>
+            <li class="opcionMenuPaginaInterno" data-component="direccionmapa" onclick="loadContentInt('direccionmapa')">
+                <a href="#" class="linkOpcionMenuPaginaInterno" >
+                    <span class="labelOpcionMenuInterno">Dirección</span>
+                    <span class="material-symbols-outlined iconOpcionMenuInterno">add_location_alt</span>
+                </a>
+            </li>
+            <li class="opcionMenuPaginaInterno" data-component="contactos">
+                <a href="#" class="linkOpcionMenuPaginaInterno">
+                    <span class="labelOpcionMenuInterno">Contactos</span>
+                    <span class="material-symbols-outlined iconOpcionMenuInterno">contacts</span>
+                </a>
+            </li>
+            <li class="opcionMenuPaginaInterno" data-component="archivos">
+                <a href="#" class="linkOpcionMenuPaginaInterno">
+                    <span class="labelOpcionMenuInterno">Archivos</span>
+                    <span class="material-symbols-outlined iconOpcionMenuInterno">archive</span>
+                </a>
+            </li>
+            <li class="opcionMenuPaginaInterno" data-component="notas">
+                <a href="#" class="linkOpcionMenuPaginaInterno">
+                    <span class="labelOpcionMenuInterno">Notas</span>
+                    <span class="material-symbols-outlined iconOpcionMenuInterno">description</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="formInterno" id="formInterno">
+        <!-- Hola mundo mundial -->
+    </div>
+    <script src="/assets/scripts/menuPaginas.js"></script>
+    <script src="/assets/scripts/personaJuridica.js"></script>
+</body>
+</html>
