@@ -1,4 +1,4 @@
-/* ****** Modal de LogOut ******* */
+/* ****** Modales ******* */
 
 .modal{
     display: none;
@@ -26,6 +26,8 @@
     left: 500px;
     top: 200px;
     box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    box-sizing: border-box;
+    padding: 14px;
 }
 
 .modalContent h2{
@@ -56,13 +58,13 @@
     margin-left: auto;
 }
 
-#iconCancelModal{
+.cancelIconModal{
     margin: 4px;
     text-align: right;
     cursor: pointer;
 }
 
-#iconCancelModal:hover{
+.cancelIconModal:hover{
     color: var(--boton-principal-hover);
 }
 

@@ -19,7 +19,6 @@
                             <h3>Inicio de Sesión</h3>
                             <span id="iconErrors" class="material-symbols-outlined">
                                 warning
-                                
                             </span>
                             <div class="tooltipModalErrors">
                                 <span>Ver Mensajes</span>
@@ -58,7 +57,7 @@
             <div class="modalContent">
                 <!-- <h2>Errores</h2> -->
                 <div class="contentIconCancelModal">
-                    <span id="iconCancelModal" class="material-symbols-outlined">
+                    <span id="iconCancelModal" class="cancelIconModal material-symbols-outlined">
                         Cancel
                     </span>
                 </div>
@@ -91,6 +90,56 @@
                         Cerrar
                     </button>
                 </div>
+            </div>
+        </div>
+
+        <!-- Modal para selección de Rol cuando tiene más de 1 -->
+
+        <div id="modalRol" class="modal">
+            <div class="modalContent">
+                    <!-- <h2>Errores</h2> -->
+                    <div class="contentIconCancelModal">
+                        <!-- Icono para cerrar modal -->
+                        <span id="iconCloseModal" class="cancelIconModal material-symbols-outlined">
+                            Cancel
+                        </span>
+                    </div>
+                    
+                    
+                    <div id="modalMessage" class="infoModalContent">
+                        <div class="tittleModal">
+                            <span class="material-symbols-outlined">
+                                account_circle
+                            </span>
+                            <p>Tu usuario tiene asignado más de un Rol. Selecciona el Rol con el cual quieres ingresar</p>
+                        </div>
+                        <div class="selectRol">
+
+                        </div>
+                    </div>
+                    <form action="">
+                        <div class="form-group">
+                            <div class="input-group full-width">
+                                <select  id="option" required>
+                                    <option value="0">Selecciona una opción</option>
+                                    <option value="1">Administrador</option>
+                                    <option value="1">Propietario 1</option>
+                                    <option value="1">Propietario 2</option>
+                                </select>
+                                <label for="option">Roles</label>
+                            </div>
+                            
+                        </div>
+                    </form>
+                        
+                    <div class="buttonsForm">
+                        <button id="backLogin" type="button">
+                            Regresar
+                        </button>
+                        <button id="btnLogInWithRols" type="button">
+                            Iniciar Sesión
+                        </button>
+                    </div>
             </div>
         </div>
     </div>
