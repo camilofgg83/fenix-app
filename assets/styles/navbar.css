@@ -92,16 +92,25 @@
         .usuarioMenu {
             display: flex;
             align-items: center;
-            width: 150px;
+            width: 250px;
             color: white;
             font-size: x-small;
             cursor: pointer;
             position: relative; /*Necesario para el dropdown*/
+            gap: 8px;
         }
         
         .userName {
             margin-left: auto;
             align-items: rigth;
+            font-size: small;
+            font-weight: bold;
+        }
+
+        .userRol {
+            margin-left: auto;
+            align-items: rigth;
+            font-size: x-small;
         }
 
         #arrowUser {
