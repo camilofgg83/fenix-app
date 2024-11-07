@@ -4,8 +4,10 @@ document.addEventListener("DOMContentLoaded", function(){
     let containerModal = document.getElementById('modalFormNewRecord');
     let formContainer = document.getElementById('formModal');
     let closeModalButton = document.getElementById('closeModal');
+    let closeMessage = document.getElementById('iconCloseMessage');
+    let messageDiv = document.getElementById('messageDiv');
 
-    document.querySelector('.tableData').addEventListener('click', function(event) {
+    document.querySelector('.tableData').addEventListener('click', function(event) {        
         let row = event.target.closest('tr'); // Obtener la fila correspondiente al clic
 
         if (event.target.classList.contains('iconStatusActiveOptionsTable')) {
@@ -42,7 +44,14 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     });
 
+    function closeMessageDiv() {
+        messageDiv.style.display = 'none';
+        console.log("Entro a la funcion para cerrar");
+    }
+
+
     // Cerrar el modal al hacer clic en el botón "Cancelar"
     closeModalButton.addEventListener('click', closeModal);
+    closeMessage.addEventListener('click', closeMessageDiv);
 
 });

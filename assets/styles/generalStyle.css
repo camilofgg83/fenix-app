@@ -307,21 +307,42 @@ a:hover{
 
             background-image: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20height%3D%2220px%22%20viewBox%3D%220%20-960%20960%20960%22%20width%3D%2220px%22%20fill%3D%22%23B7B7B7%22%3E%3Cpath%20d%3D%22m332-264%20148-113%20148%20113-56-182%20148-106H538l-58-192-58%20192H240l148%20106-56%20182ZM480-96q-79%200-149-30t-122.5-82.5Q156-261%20126-331T96-480q0-80%2030-149.5t82.5-122Q261-804%20331-834t149-30q80%200%20149.5%2030t122%2082.5Q804-699%20834-629.5T864-480q0%2079-30%20149t-82.5%20122.5Q699-156%20629.5-126T480-96Zm0-72q130%200%20221-91t91-221q0-130-91-221t-221-91q-130%200-221%2091t-91%20221q0%20130%2091%20221t221%2091Zm0-312Z%22/%3E%3C/svg%3E');
             background-repeat: no-repeat;
-            background-position: right 10px center; /* Ajusta la posición del icono */
-            background-size: 20px; /* Ajusta el tamaño del icono */
+            background-position: right 10px center; 
+            background-size: 20px; 
         }
 
         input[type="search"] {
             padding: 8px;
-            background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20height%3D%2220px%22%20viewBox%3D%220%20-960%20960%20960%22%20width%3D%2220px%22%20fill%3D%22%23CCCCCC%22%3E%3Cpath%20d%3D%22M765-144%20526-383q-30%2022-65.79%2034.5-35.79%2012.5-76.18%2012.5Q284-336%20214-406t-70-170q0-100%2070-170t170-70q100%200%20170%2070t70%20170.03q0%2040.39-12.5%2076.18Q599-464%20577-434l239%20239-51%2051ZM384-408q70%200%20119-49t49-119q0-70-49-119t-119-49q-70%200-119%2049t-49%20119q0%2070%2049%20119t119%2049Z%22/%3E%3C/svg%3E');
+
+            /* Incluir dentro el icono de buscar */
+
+            /* background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20height%3D%2220px%22%20viewBox%3D%220%20-960%20960%20960%22%20width%3D%2220px%22%20fill%3D%22%23CCCCCC%22%3E%3Cpath%20d%3D%22M765-144%20526-383q-30%2022-65.79%2034.5-35.79%2012.5-76.18%2012.5Q284-336%20214-406t-70-170q0-100%2070-170t170-70q100%200%20170%2070t70%20170.03q0%2040.39-12.5%2076.18Q599-464%20577-434l239%20239-51%2051ZM384-408q70%200%20119-49t49-119q0-70-49-119t-119-49q-70%200-119%2049t-49%20119q0%2070%2049%20119t119%2049Z%22/%3E%3C/svg%3E');
             background-repeat: no-repeat;
-            background-position: right 10px center; /* Ajusta la posición del icono */
-            background-size: 20px; /* Ajusta el tamaño del icono */
+            background-position: right 10px center; 
+            background-size: 20px;  */
         }
 
-        /* Quitar icono de cerrar */
-        input[type="search"]::-webkit-search-cancel-button {
+        /* Quitar icono de limpiar búsqueda */
+        /* input[type="search"]::-webkit-search-cancel-button {
             appearance: none;
+        } */
+
+        .searchButton{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            font-size: small;
+            background-color: white;
+            /* border: 1px solid var(--boton-principal); */
+            color: var(--boton-principal);
+        }
+
+        .searchButton:hover {
+            background-color: var(--boton-principal);
+            color: white;
         }
 
 @media (max-width: 600px) {

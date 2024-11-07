@@ -13,7 +13,7 @@
     <div class="contenedorPrincipal">
         <div class="cardTables">
             <div class="tittleAndInfo">
-                <h2 class="tittleCardTables">Opciones Fenix</h2>
+                <h2 id="tittleDataTable" class="tittleCardTables">Opciones Fenix</h2>
                 <span class="material-symbols-outlined">
                     info
                 </span>
@@ -21,13 +21,40 @@
                     <p>En esta sección se registran ......</p>
                 </div>
             </div>
+
+            <div id="messageDiv" class="tittleSearch">
+                La búsqueda está filtrada por XXXX
+                <span id="iconCloseMessage" class="material-symbols-outlined">
+                    cancel
+                </span>
+            </div>
         
             <div class="containerButtonsCardTable">
                 <div class="searchCardTable">
                     <p>Buscar: </p>
                     <input type="search" name="" id="">
+                    <button class="searchButton">
+                        <span class="material-symbols-outlined">
+                            search
+                        </span>
+                    </button>
+                </div>
+                <div class="tab-container">
+                    <input type="radio" name="tabs" id="activeStatus" checked>
+                    <label for="activeStatus">Activos</label>
+
+                    <input type="radio" name="tabs" id="inactiveStatus">
+                    <label for="inactiveStatus">Inactivos</label>
+
+                    <input type="radio" name="tabs" id="allStatus">
+                    <label for="allStatus">Todos</label>
+                    
                 </div>
                 <div class="buttonsLeftCardTable">
+                    <button class="infoButtonAndIcon">
+                        <span class="material-symbols-outlined">download</span>
+                        Cargar
+                    </button>
                     <button class="infoButtonAndIcon">
                         <span class="material-symbols-outlined">upgrade</span>
                         Exportar
